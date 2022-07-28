@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--Code By foolishdeveloper.com-->
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+
+  <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
+  <style media="screen">
+ html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background: rgb(39, 51, 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+    
+
+.carousel {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  perspective: 100rem;
+}
+.carousel__cards {
+  position: relative;
+  width: 20rem;
+  height: 20rem;
+  transform-style: preserve-3d;
+  transform: translateZ(-25rem);
+  transition: transform 0.3s ease-in;
+}
+.carousel__img {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.carousel__card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 2px solid white;
+  border-radius: 0.2rem;
+  font-size: 3em;
+  font-weight: 700;
+}
+.carousel__card:nth-child(1) {
+  transform: rotateY(0deg) translateZ(25rem);
+}
+.carousel__card:nth-child(2) {
+  transform: rotateY(45deg) translateZ(25rem);
+}
+.carousel__card:nth-child(3) {
+  transform: rotateY(90deg) translateZ(25rem);
+}
+.carousel__card:nth-child(4) {
+  transform: rotateY(135deg) translateZ(25rem);
+}
+.carousel__card:nth-child(5) {
+  transform: rotateY(180deg) translateZ(25rem);
+}
+.carousel__card:nth-child(6) {
+  transform: rotateY(225deg) translateZ(25rem);
+}
+.carousel__card:nth-child(7) {
+  transform: rotateY(270deg) translateZ(25rem);
+}
+.carousel__card:nth-child(8) {
+  transform: rotateY(315deg) translateZ(25rem);
+}
+.carousel__btn {
+  outline: none;
+  border: none;
+  border-radius: 0.2rem;
+  background: rgba(57, 146, 230, 0.822);
+  padding: 0.5em 1em;
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+  margin: 0 2rem;
+  margin-top: 20px;
+}
+.carousel__btn:hover {
+  transform: scale(1.04);
+  background: #000000;
+}
+    
+  </style>
+</head>
+
+<body>
+<div class="carousel">
+  <div class="carousel__cards">
+    <div class="carousel__card">
+      <img class="carousel__img"
+           src="https://www.pixelstalk.net/wp-content/uploads/2016/10/Pictures-Dora-Download-Free.jpg">
+    </div>
+    <div class="carousel__card">
+      <img class="carousel__img"
+           src="https://i.pinimg.com/originals/0d/93/ed/0d93ed0c57d2b819157912b2b816d15c.jpg">
+    </div>
+    <div class="carousel__card">
+      <img class="carousel__img"
+           src="https://wallpapercave.com/wp/wp1935097.jpg">
+    </div>
+    <div class="carousel__card">
+      <img class="carousel__img"
+           src="https://www.seekpng.com/png/detail/73-734028_nickelodeon-the-explorer-delta-doras-3d-world-of.png">
+    </div>
+    <div class="carousel__card">
+      <img class="carousel__img"
+           src="https://www.noggin.com/app/uploads/2019/06/Dora-Copy.jpg">
+    </div>
+    <div class="carousel__card">
+      <img class="carousel__img"
+           src="http://assets.stickpng.com/images/580b57fbd9996e24bc43bd3e.png">
+    </div>
+    <div class="carousel__card">
+      <img class="carousel__img"
+           src="https://i.pinimg.com/originals/dd/6f/2b/dd6f2b3892598fb24eec695a39720de2.jpg">
+    </div>
+    <div class="carousel__card">
+      <img class="carousel__img"
+           src="https://i.pinimg.com/originals/aa/7d/33/aa7d3331ddb1718a931743502b22ce2e.jpg">
+    </div>
+
+  </div>
+  <div class="carousel__control">
+    <button class="carousel__btn carousel__btn--back">&#8678; Prev</button>
+    <button class="carousel__btn carousel__btn--next">Next &#8680;</button>
+  </div>
+</div>
+ 
+ 
+    <script>
+ const next = document.querySelector(".carousel__btn--next"),
+  back = document.querySelector(".carousel__btn--back"),
+  carousel = document.querySelector(".carousel__cards");
+let angle = 0;
+
+next.addEventListener("click", () => {
+  angle -= 45;
+  carousel.style.transform = `translateZ(-25rem) rotateY(${angle}deg)`;
+});
+
+back.addEventListener("click", () => {
+  angle += 45;
+  carousel.style.transform = `translateZ(-25rem) rotateY(${angle}deg)`;
+});
+
+    </script>
+</body>
+</html>
+
